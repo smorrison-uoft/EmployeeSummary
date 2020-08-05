@@ -18,16 +18,13 @@ function managerSignIn() {
         type: "input",
         name: "managerName",
         message: "What is your name?",
-        validate: function(answer) {
-            if(answer !== "") {
-                return true;
-            }
-            return "Please enter a valid name"
-        }
+        
+        
     }, {
         type: "input",
         name: "managerId",
         message: "What is your id?"
+        
     },
     {
         type: "input",
@@ -119,7 +116,7 @@ function addEngineer() {
     },
     ]).then(function (answers) {
         const engineer= new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub)
-        teamMembers.push(intern)
+        teamMembers.push(engineer)
         addEmployee()
     })
 }
